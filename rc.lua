@@ -15,6 +15,9 @@ local menubar = require("menubar")
 -- Load Debian menu entries
 require("debian.menu")
 
+-- Conky
+require("conky")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -273,6 +276,9 @@ globalkeys = awful.util.table.join(
     awful.key({modkey,            }, "F1",     function () awful.screen.focus(1) end),
     awful.key({modkey,            }, "F2",     function () awful.screen.focus(2) end),
 
+    awful.key({}, "F10", function() raise_conky() end, function() lower_conky() end),
+    awful.key({}, "Pause", function() toggle_conky() end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
@@ -379,10 +385,19 @@ awful.rules.rules = {
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Google Chrome to always map on tags number 2 of screen 2.
-    { rule = { class = "Google-chrome" },
-      properties = { tag = tags[2][2] } },
+    --{ rule = { class = "Google-chrome" },
+    --  properties = { tag = tags[2][2] } },
     { rule = { class = "Emacs24" },
       properties = { tag = tags[2][1] } },
+
+    { rule = { class = "Conky" },
+      properties = {
+	 floating = true,
+	 sticky = true,
+	 ontop = false,
+	 focusable = false,
+	 size_hints = {"program_position", "program_size"}
+    } }
 }
 -- }}}
 
