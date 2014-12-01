@@ -387,8 +387,8 @@ awful.rules.rules = {
     -- Set Google Chrome to always map on tags number 2 of screen 2.
     --{ rule = { class = "Google-chrome" },
     --  properties = { tag = tags[2][2] } },
-    { rule = { class = "Emacs24" },
-      properties = { tag = tags[2][1] } },
+    --{ rule = { class = "Emacs24" },
+    --  properties = { tag = tags[2][1] } },
 
     { rule = { class = "Conky" },
       properties = {
