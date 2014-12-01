@@ -18,6 +18,9 @@ require("debian.menu")
 -- Conky
 require("conky")
 
+-- rhythmbox
+require("rhythmbox")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -290,7 +293,12 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+
+    -- rhythmbox
+    awful.key({ modkey }, ".", function() rhythmbox_next() end),
+    awful.key({ modkey, "Shift" }, ".", function() rhythmbox_volume_up() end),
+    awful.key({ modkey, "Shift" }, ",", function() rhythmbox_volume_down() end)
 )
 
 clientkeys = awful.util.table.join(
