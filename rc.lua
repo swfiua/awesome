@@ -298,7 +298,8 @@ globalkeys = awful.util.table.join(
     -- rhythmbox
     awful.key({ modkey }, ".", function() rhythmbox_next() end),
     awful.key({ modkey, "Shift" }, ".", function() rhythmbox_volume_up() end),
-    awful.key({ modkey, "Shift" }, ",", function() rhythmbox_volume_down() end)
+    awful.key({ modkey, "Shift" }, ",", function() rhythmbox_volume_down() end),
+    awful.key({ modkey }, "Pause", function() rhythmbox_play_pause() end)
 )
 
 clientkeys = awful.util.table.join(

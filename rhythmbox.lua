@@ -13,6 +13,10 @@ function rhythmbox_volume_down()
    awful.util.spawn_with_shell("rhythmbox-client --volume-down")
 end
 
+function rhythmbox_play_pause()
+   awful.util.spawn_with_shell("rhythmbox-client --play-pause")
+end
+
 
 
 
