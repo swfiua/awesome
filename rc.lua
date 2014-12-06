@@ -278,6 +278,8 @@ globalkeys = awful.util.table.join(
 
     awful.key({modkey,            }, "F1",     function () awful.screen.focus(1) end),
     awful.key({modkey,            }, "F2",     function () awful.screen.focus(2) end),
+    awful.key({}, "F11",     function () awful.screen.focus(1) end),
+    awful.key({}, "F12",     function () awful.screen.focus(2) end),
 
     awful.key({}, "F10", function() raise_conky() end, function() lower_conky() end),
     awful.key({}, "Pause", function() toggle_conky() end),
@@ -297,6 +299,7 @@ globalkeys = awful.util.table.join(
 
     -- rhythmbox
     awful.key({ modkey }, ".", function() rhythmbox_next() end),
+    awful.key({ modkey }, ",", function() rhythmbox_previous() end),
     awful.key({ modkey, "Shift" }, ".", function() rhythmbox_volume_up() end),
     awful.key({ modkey, "Shift" }, ",", function() rhythmbox_volume_down() end),
     awful.key({ modkey }, "Pause", function() rhythmbox_play_pause() end)
@@ -481,4 +484,9 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+-- make Caps Lock an extra control
+awful.util.spawn_with_shell("setxkbmap -option ctrl:nocaps")
+
+
 -- }}}
