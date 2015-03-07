@@ -52,7 +52,7 @@ beautiful.init("~/.config/awesome/themes/default/theme.lua")
 -- beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "x-terminal-emulator"
+terminal = "xterm"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -487,6 +487,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- make Caps Lock an extra control
 awful.util.spawn_with_shell("setxkbmap -option ctrl:nocaps")
+awful.util.spawn_with_shell("xrdb -load .Xdefaults")
 
 
 -- }}}
