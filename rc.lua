@@ -18,8 +18,11 @@ require("debian.menu")
 -- Conky
 require("conky")
 
--- rhythmbox
+
+-- MY STUFF
 require("rhythmbox")
+require("escape")
+
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -302,8 +305,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, ",", function() rhythmbox_previous() end),
     awful.key({ modkey, "Shift" }, ".", function() rhythmbox_volume_up() end),
     awful.key({ modkey, "Shift" }, ",", function() rhythmbox_volume_down() end),
-    awful.key({ modkey }, "Pause", function() rhythmbox_play_pause() end)
-    awful.key({ modkey }, "]", function() simulate_escape() end),
+    awful.key({ modkey }, "Pause", function() rhythmbox_play_pause() end),
+    awful.key({ modkey }, "]", function() simulate_escape() end)
 )
 
 clientkeys = awful.util.table.join(

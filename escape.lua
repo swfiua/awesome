@@ -2,7 +2,10 @@
 local awful = require("awful")
 
 function simulate_escape() 
-   awful.util.spawn_with_shell("xvkbd -text \"'\e'\" ")
+
+   -- FIXME -- find an incantation that works here
+   -- awful.util.spawn_with_shell("xvkbd -text \"'\e'\" ")
+   -- awful.util.spawn_with_shell("xvkbd -text foooo ")
 end
 
 
