@@ -546,4 +546,10 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+-- make Caps Lock an extra control
+awful.util.spawn_with_shell("setxkbmap -option ctrl:nocaps")
+awful.util.spawn_with_shell("xrdb -load .Xdefaults")
+
+
 -- }}}
